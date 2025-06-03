@@ -85,7 +85,7 @@
                 username: username.value,
                 password: password.value
             });
-            if(response.data.length > 0){
+            if(response.data.code === 200){
                 successMessage.value = '登录成功';
                 alert("登录成功！");
                 //没有后端，先暂时将数据存储在本地浏览器
@@ -94,8 +94,8 @@
                 console.log("准备跳转到首页面");
                 router.push('/Wechat'); 
             }else{
-                errorMessage.value = '用户名或者密码错误';
-                alert("用户名或者密码错误");
+                errorMessage.value = response.data.message;
+                alert(errorMessage.value);
             }
         }catch(error){
             errorMessage.value = '请求出错，请稍后再试';
