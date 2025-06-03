@@ -11,12 +11,12 @@ CREATE TABLE IF NOT EXISTS `user` (
     `nickname` VARCHAR(50),
     `avatar` VARCHAR(255) DEFAULT NULL,
     `signature` VARCHAR(255) DEFAULT NULL,
-    `email` VARCHAR(100) DEFAULT NULL,
+    `email` VARCHAR(100) NOT NULL,
     `status` TINYINT DEFAULT 1,
     `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP,
-    `update_time` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`),
     UNIQUE KEY `uk_username` (`username`)
+    UNIQUE KEY `uk_email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Friendship table
