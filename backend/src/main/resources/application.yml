@@ -1,25 +1,23 @@
+server:
+  port: 8080
+
 spring:
-  application:
-    name: chat_zone
   datasource:
-    url: jdbc:mysql://localhost:3306/chatzone?useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chatzone?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: yh060102
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  servlet:
-    multipart:
-      max-file-size: 5MB
-      max-request-size: 10MB
 
 mybatis:
-  type-aliases-package: com.dyhczh.chat_zone.entity
+  type-aliases-package: com.chatzone.entity
+  configuration:
+    map-underscore-to-camel-case: true
 
-############## Sa-Token ?? ##############
 sa-token:
   token-name: token
   timeout: 2592000
   active-timeout: -1
-  is-concurrent: false
-  is-share: false
+  is-concurrent: true
+  is-share: true
   token-style: uuid
-  is-log: true
+  is-log: false
