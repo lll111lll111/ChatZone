@@ -57,6 +57,7 @@
     import { ref } from 'vue';
     import axios from 'axios';
     import router from '@/router';
+    import { loginApi } from '@/request/api';
     //创建响应式数据
     const username = ref("");
     const password = ref("");
@@ -80,12 +81,9 @@
             return;
         }
         try{
-            const response = await axios.post('http://localhost:8080/user/login',null,
-            {
-                params: {
-                    username: username.value,
-                    password: password.value
-                }
+            const response = await loginApi({
+                username: username.value,
+                password: password.value
             });
             if(response.data.length > 0){
                 successMessage.value = '登录成功';
@@ -104,6 +102,7 @@
             console.error('请求出错：',error);
         }
     };
+
 </script>
 
 <style scoped>
