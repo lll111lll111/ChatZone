@@ -24,13 +24,13 @@ declare module 'vue' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElLabel: typeof import('element-plus/es')['ElLabel']
-    Interface: typeof import('./src/components/Interface.vue')['default']
-    Landding: typeof import('./src/components/landding.vue')['default']
-    Login: typeof import('./src/components/login.vue')['default']
+    index: typeof import('./src/components/index.vue')['default']
+    login: typeof import('./src/components/login.vue')['default']
     Person: typeof import('./src/components/Person.vue')['default']
     Profile: typeof import('./src/components/profile.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    signup: typeof import('./src/components/signup.vue')['default']
     Svglcon: typeof import('./src/components/Svglcon.vue')['default']
   }
 }
