@@ -1,6 +1,6 @@
 <template>
-    <div class="login-container">
-        <el-card class="login-card">
+    <div class="signup-container">
+        <el-card class="signup-card">
             
             <div class="">
                 <div class="top_image">
@@ -41,9 +41,6 @@
                 <el-form-item label="密码确认" prop="confirmPassword" class="custom_input  custom-error-confirmPassword">
                     <el-input type="password" v-model="formData.confirmPassword" placeholder="请再次输入密码" class="mima_queren"></el-input>
                 </el-form-item>
-                <el-form-item label="电话号码" prop="phone" class="custom_input  custom-error-phone">
-                    <el-input type="tel" v-model="formData.phone" placeholder="请输入电话号码" class="phone"></el-input>
-                </el-form-item>
                 <el-form-item label="邮件" prop="email" class="custom_input  custom-error-email">
                     <el-input type="email" v-model="formData.email" placeholder="请输入邮箱" class="email"></el-input>
                 </el-form-item>
@@ -59,15 +56,16 @@
     </div>
 </template>
 
-<script setup lang="ts">
-import {  reactive, ref } from 'vue';
-import { ElForm, ElFormItem, ElInput, ElButton, ElCard, ElIcon, ElMessage, type FormInstance } from 'element-plus';
+<script setup>
+import { ref, reactive } from 'vue';
+import { ElForm, ElFormItem, ElInput, ElButton, ElCard, ElIcon, ElMessage } from 'element-plus';
+import { ArrowLeft } from '@element-plus/icons-vue';
+import axios from 'axios'; // 导入axios
 import 'element-plus/dist/index.css';
 import { useRouter } from 'vue-router';
-import { signupApi } from '@/api/user'; // 导入注册接口
-import type { SignupRequest } from '@/dto/userDto';
 
-const formData:SignupRequest = reactive({
+const formRef = ref(null);
+const formData = reactive({
     username: '',
     password: '',
     confirmPassword: '',
@@ -75,78 +73,77 @@ const formData:SignupRequest = reactive({
     email: ''
 });
 
-// 使用ref存储表单实例
-const formRef = ref<FormInstance>();
-
-// 设置表单验证规则
+//设置表单验证规则
+//trigger的作用：用于指定检验规则在什么事件发生时执行
+//‘blur’:元素失去聚焦时触发验证，change:值发生变化时触发验证
 const rules = reactive({
-  username: [
-    { required: true, message: '请输入用户名', trigger: 'blur' },
-    { min: 3, max: 20, message: '长度在3到20个字符', trigger: 'blur' }
-  ],
-  password: [
-    { required: true, message: '请输入密码', trigger: 'blur' },
-    { min: 6, message: "密码长度至少为6个字符", trigger: 'blur' }
-  ],
-  confirmPassword: [
-    { required: true, message: "请确认密码", trigger: "blur" },
-    { 
-      validator: (rule: unknown, value: string, callback: (error?: Error) => void) => {
-        if (value !== formData.password) {
-          callback(new Error('两次输入的密码不一致'));
-        } else {
-          callback();
-        }
-      }, 
-      trigger: 'blur' 
-    }
-  ],
-  phone: [
-    { required: true, message: '请输入电话号码', trigger: 'blur' },
-    { pattern: /^1[3-9]\d{9}$/, message: "请输入正确的手机号码", trigger: 'blur' }
-  ],
-  email: [
-    { required: true, message: "请输入邮箱", trigger: 'blur' },
-    { 
-      pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/, 
-      message: '请输入正确的邮箱地址', 
-      trigger: ['blur', 'change'] 
-    }
-  ]
-});
-
-const submitForm = async () => {
-    // 通过ref获取表单实例并验证
-    if (formRef.value) {
-        formRef.value.validate((valid: boolean) => {
-            if (valid) {
-                signup(); // 调用注册接口
+    username:[
+        {required:true,message:'请输入用户名',trigger:'blur'},
+        {min:3,max:20,message:'长度在3到20个字符',trigger:'blur'}
+    ],
+    password:[
+        {required:true,message:'请输入密码',trigger:'blur'},
+        {min:6,message:"密码长度至少为6个字符",trigger:'blur'}
+    ],
+    confirmPassword:[
+        {required:true,message:"请确认密码",trigger:"blur"},
+        {validator:(rule,value,callback)=>{
+            if(value!==formData.password){
+                callback(new Error('两次输入的密码不一致'));
+            }else{
+                callback();
             }
-            // 不要返回任何值
-        });
-    }
+        },trigger:'blur'}
+    ],
+    phone:[
+        {required:true,message:'请输入电话号码',trigger:'blur'},
+        {pattern:/^1[3-9]\d{9}$/,message:"请输入正确的手机号码",trigger:'blur'}
+    ],
+    email:[
+        {required:true,message:"请输入邮箱",trigger:'blur'},
+        {type:'email',message:'请输入正确的邮箱地址',trigger:['blur','change']}
+    ]
+})
+
+const submitForm = async() => {
+    formRef.value.validate(valid=>{
+        if(!valid) return false;
+        registerUser(); // 调用registerUser函数
+    })
 };
 
 
-const signup = async()=>{
+const registerUser = async()=>{
     try{
-        const response = await signupApi(formData);
+        const response = await axios.post(
+            "http://localhost:8080/user/signup",
+            {
+                username:formData.username,
+                password:formData.password,
+                phone:formData.phone,
+                email:formData.email
+            }
+        );
+        ElMessage.success('注册成功，请登录');
+        setTimeout(()=>{
+            router.push('/login');
+        },1500);
+
     }catch(error){
         //错误处理
-        const err = error as any;
-        if(err.response){
-            ElMessage.error(`注册失败:${err.response.data.message||'服务器错误'}`);
-        }else if(err.request){ // 这里应该是error.request，而不是error.response
+        if(error.response){
+            ElMessage.error(`注册失败:${error.response.data.message||'服务器错误'}`);
+        }else if(error.request){ // 这里应该是error.request，而不是error.response
             ElMessage.error('网络连接失败，请稍后重试');
         }else {
-            ElMessage.error(`注册失败:${err.message}`);
+            ElMessage.error(`注册失败:${error.message}`);
         }
     }
 };
 
 const router = useRouter();
 const goBack = () => {
-    router.go(-1);
+    router.push('/login');
 };
 </script>
 
@@ -178,21 +175,21 @@ const goBack = () => {
         }
     }
 
-    .login-container {
+    .signup-container {
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
     }
 
-    .login-card {
+    .signup-card {
         width: 550px;
         height: 800px;
         transition: all 0.3s ease;
         box-shadow: 0 3px 4px grey;
     }
 
-    .login-card:hover{
+    .signup-card:hover{
         box-shadow: 0 12px 30px rgba(173,216,230,0.4);
     }
 

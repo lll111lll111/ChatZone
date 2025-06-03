@@ -8,17 +8,10 @@ import router from './router'
 
 import axios from 'axios'
 
-import { ErrorHandler } from './plugins/errorHandler';
-
-import { createPinia } from "pinia";
-
 //创建一个应用
 const app = createApp(App)
-
-const pinia = createPinia()
 app.use(ElementPlus)
-app.use(ErrorHandler);
-app.use(pinia)
+
 // localStorage.clear();
 
 axios.interceptors.request.use(config => {

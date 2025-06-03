@@ -84,8 +84,7 @@ const typeCharacter = () => {
 
 // 进入聊天室逻辑
 const enterChatroom = () => {
-  router.push('/signup') // 路由跳转到聊天室页面
-  alert('即将进入聊天室！')
+  router.push('/signup')
   // 实际应用中这里可以添加路由跳转逻辑
 }
 </script>

@@ -4,7 +4,7 @@
 import {createRouter,createWebHistory} from 'vue-router'
 //引入一个一个可能要呈现的组件
 import signup from "@/pages/signup.vue";
-import login from '@/pages/login.vue'
+import login from '../pages/login.vue'
 import Comment from '@/pages/comment.vue'
 import profile from '@/pages/profile.vue'
 import index from '@/pages/index.vue'
@@ -19,12 +19,12 @@ const router = createRouter({
             component:index
         },
         {
-            path:'/login',
-            component:login
-        },
-        {
             path:'/signup',
             component:signup
+        },
+        {
+            path:'/login',
+            component:login
         },
         {
             path:'/Wechat',
