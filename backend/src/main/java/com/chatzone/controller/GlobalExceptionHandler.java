@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
     private final Logger logger = LogManager.getLogger(GlobalExceptionHandler.class);
 
-    @ExceptionHandler(UserNotFoundException.class)
-    public ApiResponse<Object> handleApiException(ApiException e) {
+    @ExceptionHandler(ApiException.class)
+    public ApiResponse<Void> handleApiException(ApiException e) {
         return ApiUtil.failedResponse(e.getCode(), e.getMessage());
     }
 
