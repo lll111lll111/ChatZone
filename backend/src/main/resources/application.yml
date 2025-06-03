@@ -1,8 +1,8 @@
 spring:
   application:
-    name: easyweibo
+    name: chat_zone
   datasource:
-    url: jdbc:mysql://localhost:3306/easyweibo?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/chatzone?useUnicode=true&characterEncoding=utf8
     username: root
     password: yh060102
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -12,7 +12,7 @@ spring:
       max-request-size: 10MB
 
 mybatis:
-  type-aliases-package: kitra.easyweibo.entity
+  type-aliases-package: com.dyhczh.chat_zone.entity
 
 ############## Sa-Token ?? ##############
 sa-token:
