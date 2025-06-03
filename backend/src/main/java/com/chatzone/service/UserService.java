@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+import static java.lang.StringTemplate.STR;
+
 @Service
 public class UserService {
     @Autowired
