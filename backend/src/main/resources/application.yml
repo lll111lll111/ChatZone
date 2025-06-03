@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: easyweibo
+  datasource:
+    url: jdbc:mysql://localhost:3306/easyweibo?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: yh060102
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+mybatis:
+  type-aliases-package: kitra.easyweibo.entity
+
+############## Sa-Token ?? ##############
+sa-token:
+  token-name: token
+  timeout: 2592000
+  active-timeout: -1
+  is-concurrent: false
+  is-share: false
+  token-style: uuid
+  is-log: true
