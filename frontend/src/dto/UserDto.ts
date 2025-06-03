@@ -11,3 +11,7 @@ export interface LoginResponse {
   signature: string
   email: string
 }
+
+export interface SignupRequest {
+  
+}
