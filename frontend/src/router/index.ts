@@ -3,11 +3,11 @@
 //第一步：引入createRouter
 import {createRouter,createWebHistory} from 'vue-router'
 //引入一个一个可能要呈现的组件
-import landding from "@/pages/landding.vue";
-import login from '../pages/login.vue'
+import signup from "@/pages/signup.vue";
+import login from '@/pages/login.vue'
 import Comment from '@/pages/comment.vue'
 import profile from '@/pages/profile.vue'
-import Interface from '@/pages/Interface.vue'
+import index from '@/pages/index.vue'
 import Wechat from '@/pages/Wechat.vue'
 
 //第二步：创建路由器
@@ -16,15 +16,15 @@ const router = createRouter({
     routes:[ //一个一个的路由规则
         {
             path:'/',
-            component:Interface
-        },
-        {
-            path:'/landding',
-            component:landding
+            component:index
         },
         {
             path:'/login',
             component:login
+        },
+        {
+            path:'/signup',
+            component:signup
         },
         {
             path:'/Wechat',
