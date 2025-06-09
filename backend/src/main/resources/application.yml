@@ -7,6 +7,19 @@ spring:
     url: jdbc:mysql://localhost:3306/chatzone?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: yh060102
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+app:
+  storage:
+    image:
+      upload-dir: uploads/images
+      allowed-extensions: ".jpg,.jpeg,.png,.gif"  # 修改为逗号分隔的字符串
+      max-size: 5MB
+      base-url: /images/
 
 mybatis:
   type-aliases-package: com.chatzone.entity

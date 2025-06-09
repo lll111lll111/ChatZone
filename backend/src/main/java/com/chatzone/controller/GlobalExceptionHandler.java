@@ -2,7 +2,6 @@ package com.chatzone.controller;
 
 import com.chatzone.dto.ApiResponse;
 import com.chatzone.exception.ApiException;
-import com.chatzone.exception.UserNotFoundException;
 import com.chatzone.util.ApiUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,9 +17,9 @@ public class GlobalExceptionHandler {
         return ApiUtil.failedResponse(e.getCode(), e.getMessage());
     }
 
-    @ExceptionHandler({Exception.class})
-    public ApiResponse<Object> handleOtherException(Exception e) {
-        logger.error(STR."发生错误: \{e}");
-        return ApiUtil.failedResponse(500, "服务器繁忙，请稍后再试");
-    }
+//    @ExceptionHandler({Exception.class})
+//    public ApiResponse<Object> handleOtherException(Exception e) {
+//        logger.error(STR."发生错误: \{e}");
+//        return ApiUtil.failedResponse(500, "服务器繁忙，请稍后再试");
+//    }
 }

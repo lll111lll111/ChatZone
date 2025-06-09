@@ -58,6 +58,7 @@
     import axios from 'axios';
     import router from '@/router';
     import { loginApi } from '@/request/api';
+import { useUserStat } from '@/stores/userStat';
     //创建响应式数据
     const username = ref("");
     const password = ref("");
@@ -89,8 +90,7 @@
                 successMessage.value = '登录成功';
                 alert("登录成功！");
                 //没有后端，先暂时将数据存储在本地浏览器
-                localStorage.setItem('username',username.value);
-                localStorage.setItem('userId',userId.value);
+                useUserStat().set(true);
                 console.log("准备跳转到首页面");
                 router.push('/Wechat'); 
             }else{

@@ -13,5 +13,27 @@ export interface LoginResponse {
 }
 
 export interface SignupRequest {
-  
+  username: string
+  password: string
+  confirmPassword: string
+  email: string
+}
+
+export interface GetUserInfoResponse{
+  username: string
+  nickname: string
+  avatar: string
+  signature: string
+  email: string
+  age: number
+  gender: string
+  status: number
+}
+
+export interface UpdateUserInfoRequest {
+  nickname: string
+  avatar: Blob
+  signature: string
+  age: number
+  gender: string
 }

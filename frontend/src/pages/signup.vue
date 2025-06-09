@@ -47,8 +47,12 @@
                 <el-form-item class="queren">
                     <el-button type="primary" native-type="submit" class="queren_1">确认</el-button>
                 </el-form-item>
+                <el-form-item>
+                    <el-checkbox v-model="autoLogin" style="margin-left: 20px;">
+                        注册后自动登录
+                    </el-checkbox>
+                </el-form-item>
             </el-form>
-
             <router-link to="/login" class="login">已有账号？立即登录</router-link>
         </el-card>
 
@@ -59,19 +63,18 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import { ElForm, ElFormItem, ElInput, ElButton, ElCard, ElIcon, ElMessage } from 'element-plus';
-import { ArrowLeft } from '@element-plus/icons-vue';
-import axios from 'axios'; // 导入axios
 import 'element-plus/dist/index.css';
 import { useRouter } from 'vue-router';
+import { loginApi, signupApi } from '@/request/api';
 
 const formRef = ref(null);
 const formData = reactive({
     username: '',
     password: '',
     confirmPassword: '',
-    phone: '',
     email: ''
 });
+const autoLogin = ref(false); // 是否自动登录
 
 //设置表单验证规则
 //trigger的作用：用于指定检验规则在什么事件发生时执行
@@ -95,10 +98,6 @@ const rules = reactive({
             }
         },trigger:'blur'}
     ],
-    phone:[
-        {required:true,message:'请输入电话号码',trigger:'blur'},
-        {pattern:/^1[3-9]\d{9}$/,message:"请输入正确的手机号码",trigger:'blur'}
-    ],
     email:[
         {required:true,message:"请输入邮箱",trigger:'blur'},
         {type:'email',message:'请输入正确的邮箱地址',trigger:['blur','change']}
@@ -115,19 +114,30 @@ const submitForm = async() => {
 
 const registerUser = async()=>{
     try{
-        const response = await axios.post(
-            "http://localhost:8080/user/signup",
-            {
-                username:formData.username,
-                password:formData.password,
-                phone:formData.phone,
-                email:formData.email
+        const response = await signupApi({
+            username:formData.username,
+            password:formData.password,
+            confirmPassword:formData.confirmPassword,
+            email:formData.email
+        })
+        if(response.data.code == 200){
+            if(autoLogin.value){
+                // 如果选择了自动登录，直接跳转到登录页面
+                ElMessage.success('注册成功，即将自动登录...');
+                await loginApi({
+                    username: formData.username,
+                    password: formData.password
+                });
+                router.push('Wechat'); // 跳转到首页或其他页面
+            }else{
+                // 如果没有选择自动登录，提示注册成功
+                ElMessage.success('注册成功');
             }
-        );
-        ElMessage.success('注册成功，请登录');
-        setTimeout(()=>{
-            router.push('/login');
-        },1500);
+        }else{
+            // 如果注册失败，提示错误信息
+            ElMessage.error(`注册失败: ${response.data.message}`);
+            return;
+        }
 
     }catch(error){
         //错误处理
@@ -339,5 +349,10 @@ const goBack = () => {
 
     ::v-deep .custom-error-email .el-form-item__error{
         left:300px;
+    }
+
+    .login:hover {
+        color: #409eff;
+        text-decoration: underline;
     }
 </style>

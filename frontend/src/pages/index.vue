@@ -38,6 +38,7 @@
   </template>
   
 <script setup>
+import { checkLoginApi } from '@/request/api'
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -83,9 +84,15 @@ const typeCharacter = () => {
 }
 
 // 进入聊天室逻辑
-const enterChatroom = () => {
-  router.push('/signup')
-  // 实际应用中这里可以添加路由跳转逻辑
+const enterChatroom = async () => {
+  const response = await checkLoginApi()
+  if(response.data.code === 200) {
+    // 如果用户已登录，跳转到聊天室页面
+    router.push('/wechat')
+  } else {
+    // 如果用户未登录，跳转到登录页面
+    router.push('/login')
+  }
 }
 </script>
   

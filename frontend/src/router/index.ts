@@ -5,10 +5,12 @@ import {createRouter,createWebHistory} from 'vue-router'
 //引入一个一个可能要呈现的组件
 import signup from "@/pages/signup.vue";
 import login from '../pages/login.vue'
-import Comment from '@/pages/comment.vue'
 import profile from '@/pages/profile.vue'
 import index from '@/pages/index.vue'
 import Wechat from '@/pages/Wechat.vue'
+import changeProfile from '@/pages/changeProfile.vue'
+import OtherProfile from '@/pages/Wechat/otherProfile.vue';
+import PrivateChat from '@/pages/Wechat/privateChat.vue';
 
 //第二步：创建路由器
 const router = createRouter({
@@ -28,16 +30,30 @@ const router = createRouter({
         },
         {
             path:'/Wechat',
-            component:Wechat
+            component:Wechat,
+            children:[
+                {
+                    path: 'otherProfile/:username',
+                    name: 'OtherProfile',
+                    component: OtherProfile,
+                    props: true,
+                },{
+                    path: 'privateChat/:username',
+                    name: 'PrivateChat',
+                    component: PrivateChat,
+                    props: true,
+                },
+            ]
         },
         {
             path:'/profile',
             component:profile
         },
         {
-            path:'/comment',
-            component:Comment
-        }
+            path:'/changeProfile',
+            component:changeProfile
+        },
+
     ]
 })
 

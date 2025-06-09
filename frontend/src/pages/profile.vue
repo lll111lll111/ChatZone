@@ -1,278 +1,261 @@
 <template>
-    <div class="container">
-        <div class="profile">
-            
-            <div class="header">
-                <h2>账户信息</h2>
-                <el-icon @click="goBack" class="back-icon">
-                    <svg t="1748609671667" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5087" width="30" height="20"><path d="M980.65 468.6H130.25l360.1-360.2c17-17 17-44.5 0-61.4-17-17-44.5-17-61.4 0L25.35 450.6c-33.8 33.8-33.8 88.9 0 122.8L428.95 977c8.5 8.5 19.6 12.7 30.7 12.7 11.1 0 22.2-4.2 30.7-12.7 17-17 17-44.5 0-61.4L130.25 555.4h850.4c24 0 43.4-19.5 43.4-43.4s-19.5-43.4-43.4-43.4z" fill="#1296db" p-id="5088"></path></svg>
+  <div class="user-info-container">
+    <div class="user-card">
+      <el-icon @click="goBack" class="back-icon">
+                    <svg t="1748609671667" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="5087" width="30" height="20">
+                        <path
+                            d="M980.65 468.6H130.25l360.1-360.2c17-17 17-44.5 0-61.4-17-17-44.5-17-61.4 0L25.35 450.6c-33.8 33.8-33.8 88.9 0 122.8L428.95 977c8.5 8.5 19.6 12.7 30.7 12.7 11.1 0 22.2-4.2 30.7-12.7 17-17 17-44.5 0-61.4L130.25 555.4h850.4c24 0 43.4-19.5 43.4-43.4s-19.5-43.4-43.4-43.4z"
+                            fill="#1296db" p-id="5088"></path>
+                    </svg>
                 </el-icon>
-            </div>
-           
-            
-            <hr class="divider">
-            
-            <div class="image">
-                <label for="image-upload">
-                    <img :src="avatarUrl" class="image-1" alt="">
-                </label>
-                <input type="file" id="image-upload" @change="handleImageUpload" style="display: none;">
-                <input v-model="avatarUrl" type="text" placeholder="请输入图片URL或上传图片" style="margin-top:10px;width:80%;">
-            </div>
-            
-            <section class="bottom_information">
-               
-                <div class="input-group">
-                    <span class="prefix">用户名：</span>
-                    <input v-model="username" type="text" placeholder="请输入用户名">
-                </div>
-                
-                <div class="input-group">
-                    <span class="prefix">密码：</span>
-                    <input v-model="password" type="password" placeholder="请输入密码">
-                </div>
-               
-                <div class="input-group">
-                    <span class="prefix">电话：</span>
-                    <input v-model="phone" type="text" placeholder="请输入电话">
-                </div>
-               
-                <div class="input-group">
-                    <span class="prefix">邮箱：</span>
-                    <input v-model="email" type="email" placeholder="请输入邮箱">
-                </div>
-            </section>
 
-            <el-button text class="tuichu_blog" @click="tuichu()">退出登录</el-button>
-            <el-button text class="editor" @click="editor()">保存信息</el-button>
-            
+      <div class="avatar-container">
+        <img :src="avatarUrl" alt="用户头像" class="avatar" />
+      </div>
+      
+      <div class="user-details">
+        <div class="info-row">
+          <span class="label">用户名</span>
+          <span class="value">{{ userInfo.username }}</span>
         </div>
+        
+        <div class="info-row">
+          <span class="label">邮箱</span>
+          <span class="value">
+            <i class="el-icon-message" /> {{ userInfo.email }}
+          </span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">昵称</span>
+          <span class="value">{{ userInfo.nickname }}</span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">性别</span>
+          <span class="value">
+            <i v-if="userInfo.gender === '男'" class="el-icon-male" />
+            <i v-else class="el-icon-female" />
+            {{ userInfo.gender }}
+          </span>
+        </div>
+        
+        <div class="info-row">
+          <span class="label">年龄</span>
+          <span class="value">{{ userInfo.age }}</span>
+        </div>
+        
+        <div class="info-row signature">
+          <span class="label">个性签名</span>
+          <span class="value">{{ userInfo.signature || '这家伙很懒，什么都没留下' }}</span>
+        </div>
+      </div>
+      
+      <div class="btn-group">
+        <el-button type="primary" class="edit-info-btn" @click="() => router.push('/changeProfile')">
+          <i class="el-icon-edit" /> 修改信息
+        </el-button>
+        <el-button type="danger" class="logout-btn" @click="logout">
+          <i class="el-icon-switch-button" /> 退出登录
+        </el-button>
+      </div>
     </div>
+  </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
+<script setup lang="ts">
+import { checkLoginApi, getImageApi, getUserInfoApi, logoutApi } from '@/request/api'
+import { ref, onMounted } from 'vue'
+import type { GetUserInfoResponse } from "@/dto/UserDto";
+import { useUserStat } from '@/stores/userStat';
 import router from '@/router';
-import axios from 'axios';
-import { onMounted } from 'vue';
+import Wechat from './Wechat.vue';
+import { useWebSocketStore } from '@/stores/webSocket';
 
-const username = ref('');
-const password = ref('');
-const phone = ref('');
-const email = ref('');
-const avatarUrl = ref('/淘公仔.svg');
-const storedUsername = localStorage.getItem('username');
-const id = ref("");
+// 用户信息数据
+const userInfo = ref<GetUserInfoResponse>({
+  avatar: 'https://picsum.photos/200/200',
+  username: 'test_user',
+  email: 'test@example.com',
+  nickname: '测试用户',
+  gender: 'male', // male 或 female
+  age: 25,
+  signature: '生活不止眼前的苟且，还有诗和远方',
+  status: 0
+})
 
-const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-        // 本地预览
-        avatarUrl.value = URL.createObjectURL(file);
-        // 提示用户
-        alert('本地预览成功！如需跨设备显示头像，请将图片上传到图床后粘贴URL。');
-    }
-};
+const avatarUrl = ref<string>('https://picsum.photos/200/200');
 
-const get_information = async() => {
-    if (storedUsername) {
-        username.value = storedUsername;
-        try {
-            const response = await axios.get(`http://localhost:3000/users?username=${username.value}`);
-            if (response.data.length > 0) {
-                const userData = response.data[0];
-                username.value = userData.username;
-                password.value = userData.password;
-                phone.value = userData.phone;
-                email.value = userData.email;
-                id.value =  +userData.id;
-                avatarUrl.value = userData.avatar && userData.avatar !== 'default_avatar.png' ? userData.avatar : '/淘公仔.svg';
-            } else {
-                alert("未找到该用户名");
-            }
-        } catch (error) {
-            alert("获取用户信息失败" + error.message);
-        }
-    } else {
-        alert("未找到存储的用户名");
-    }
-};
+const fetchUserInfo = async () => {
+  // 这里应该是调用API获取用户信息
+  const response = await getUserInfoApi();
+  if(response.data.code == 200){
+    userInfo.value = response.data.data;
+    //获取头像
+    const avatarResponse = await getImageApi(response.data.data.avatar);
+    avatarUrl.value = URL.createObjectURL(avatarResponse.data);
+  } else{
+    alert(response.data.message);
+  }
+}
 
-    onMounted(() => {
-        get_information();
-    });
+onMounted(async () => {
+  const isLogin = await checkLoginApi();
+  if(isLogin.data.code !== 200 || !isLogin.data.data) {
+    await router.push('/login');
+    return;
+  }
+  await fetchUserInfo()
+  await useWebSocketStore().connect();
+})
 
+const logout = async() => {
+  const response = await logoutApi();
+  if(response.data.code == 200){
+    useUserStat().set(false);
+    alert("已成功退出登录");
+    router.push('/login');
+  } else {
+    alert("退出登录失败，请稍后再试");
+  }
+}
 
-    const editor = async() => {
-        if (!id.value || isNaN(id.value)) {
-            alert("用户ID无效，无法保存！");
-            return;
-        }
-        // 如果avatarUrl是blob:开头，提示用户用图床URL
-        if (avatarUrl.value.startsWith('blob:')) {
-            alert('当前头像仅本地可见，如需跨设备显示，请将图片上传到图床后粘贴URL。');
-            return;
-        }
-        let avatarToSave = avatarUrl.value && avatarUrl.value !== '' ? avatarUrl.value : '/淘公仔.svg';
-        console.log('保存用户信息:', id.value, username.value, avatarToSave);
-        try{    
-            const response = await axios({
-                method: "PUT",
-                url:`http://localhost:3000/users/${id.value}`,
-                data:{
-                    username:username.value,
-                    password:password.value,
-                    phone:phone.value,
-                    email:email.value,
-                    avatar:avatarToSave
-                }
-            });
-            localStorage.setItem('username',username.value);
-            alert("信息保存成功");
-        }catch(error){
-            alert("信息保存失败: " + (error.response?.data || error.message));
-        }     
-    }
-
-    const tuichu = () => {
-        // 清除 localStorage 中的 username
-        localStorage.removeItem('username');
-        // 跳转到主界面，假设主界面的路由名称是 'home'
-        router.push('/');
-    };
-
-    const goBack = () => {
-        router.push('/Wechat');
-    }
+const goBack = () => {
+  router.push('/Wechat')// 返回上一页
+}
 </script>
 
 <style scoped>
-/* 整体容器样式 */
-.container {
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+.user-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-/* 个人信息卡片样式 */
-.profile {
-    background-color: #fff;
-    width: 500px;
-    height: 700px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-    top: auto;
-    overflow: hidden;
+.user-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 12px;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }
 
-/* 头部样式 */
-.header {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #fafafa;
-    border-bottom: 1px solid #eaeaea;
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
-.header h2 {
-    color: #333;
-    font-size: 24px;
-    margin: 0;
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #f0f0f0;
+  transition: transform 0.3s ease;
 }
 
-/* 分割线样式 */
-.divider {
-    border: none;
-    height: 1px;
-    background-color: #eaeaea;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
-    margin: 0;
+.avatar:hover {
+  transform: scale(1.05);
 }
 
-/* 头像样式 */
-.image {
-    position: relative;
-    text-align: center;
-    padding: 30px 0;
+.edit-avatar-btn {
+  background-color: #409eff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.image-1 {
-    width: 120px;
-    height: 120px;
-    border: 4px solid #fff;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: static;
-    transform: none;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+.edit-avatar-btn:hover {
+  background-color: #66b1ff;
 }
 
-.image-1:hover {
-    transform: scale(1.05);
+.user-details {
+  width: 100%;
 }
 
-/* 底部信息样式 */
-.bottom_information {
-    position: absolute;
-    left: 15px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.input-group {
-    display: flex;
-    align-items: center;
+.info-row:last-child {
+  border-bottom: none;
 }
 
-.prefix {
-    color: #666;
-    font-size: 16px;
-    margin-right: 10px;
+.label {
+  width: 80px;
+  color: #909399;
+  font-weight: 500;
 }
 
-.bottom_information input {
-    color: #666;
-    font-size: 16px;
-    margin: 0;
-    padding: 10px 0;
-    border: none;
-    border-bottom: 1px solid #f0f0f0;
-    background-color: #fff; /* 设置背景色为白色 */
-    /* transition: background-color 0.3s ease; */
-    flex: 1;
+.value {
+  flex: 1;
+  color: #303133;
 }
 
-.bottom_information input:last-child {
-    border-bottom: none;
+.signature .value {
+  min-height: 40px;
+  line-height: 1.5;
 }
 
-.bottom_information input:hover {
-    background-color: #fafafa;
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
 }
 
-/* 退出登录按键 */
-.tuichu_blog{
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+.edit-info-btn,
+.logout-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s;
 }
 
-.editor{
-    position: absolute;
-    bottom: 20px;
-    right: 100px;
+.edit-info-btn {
+  background-color: #409eff;
+  color: white;
+  border: none;
 }
 
-.back-icon{
-    position: absolute;
-    left: 15px;
-    top: 30px;
+.edit-info-btn:hover {
+  background-color: #66b1ff;
+}
+
+.logout-btn {
+  background-color: #f56c6c;
+  color: white;
+  border: none;
+}
+
+.logout-btn:hover {
+  background-color: #f78989;
+}
+
+.el-icon-male {
+  color: #409eff;
+  margin-right: 5px;
+}
+
+.el-icon-female {
+  color: #f56c6c;
+  margin-right: 5px;
+}
+
+.el-icon-message {
+  margin-right: 5px;
 }
 </style>    
+    

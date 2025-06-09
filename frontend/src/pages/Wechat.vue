@@ -7,10 +7,10 @@
                 <svg t="1748507024366"  class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10334" width="40" height="40"><path d="M490.684916 156.359281C256.165269 156.359281 64.383234 309.755867 64.383234 501.634326 64.383234 610.634973 126.868113 710.691594 230.678884 775.40424 227.606262 773.488857 225.494778 770.415816 224.753999 767.352292 223.887537 768.541972 221.953407 773.256131 218.857033 779.006383 217.065752 782.332956 214.951892 785.897204 212.584292 789.613841 209.515541 794.431134 206.194743 799.237633 202.873358 803.77396 200.894915 806.476107 199.385181 808.450099 198.588038 809.457524 172.393538 846.514453 195.912543 878.240014 237.91885 864.281028 238.904007 863.944749 240.468491 863.41216 242.667337 862.668117 246.342793 861.42442 250.469427 860.037674 254.950478 858.543831 267.750292 854.276769 280.813441 850.010352 293.359528 846.033927 295.896051 845.229988 298.389767 844.444875 300.83653 843.680116 316.56621 838.763658 329.922562 834.822101 340.069379 832.152296 345.53275 830.714787 349.931698 829.683229 353.049854 829.104939 354.354436 828.862994 355.312446 828.724123 355.799045 828.684232 354.825653 828.76403 353.666503 828.729983 351.271205 828.060274 395.73304 840.491494 442.681213 846.909372 490.684916 846.909372 515.054363 846.909372 539.17115 845.255803 562.858125 841.990612L553.743714 841.264542C587.27542 851.488506 622.974605 856.786459 659.544225 856.786459 693.181558 856.786459 726.090816 852.304522 757.271021 843.619314 754.092157 844.504782 753.608504 844.478091 752.940486 844.368364 754.491872 844.623192 756.826954 845.133168 759.766796 845.870344 765.488513 847.305086 773.068547 849.485235 781.988654 852.233024 783.660815 852.748123 785.371243 853.28047 787.11584 853.828542 794.321124 856.09211 801.796248 858.523923 809.096177 860.956383 813.473523 862.414988 816.808901 863.546001 818.665128 864.183881 860.663463 877.971145 884.367548 846.417249 859.473647 810.157106L858.061678 808.322293C856.808278 806.864525 854.629739 804.067756 852.506478 800.829267 851.198804 798.834746 850.132845 796.983268 849.402965 795.433479 848.88826 798.914448 846.566215 803.916137 841.990053 806.75813 915.30587 761.225855 959.616766 690.536117 959.616766 613.308352 959.616766 565.930919 942.964529 520.637339 912.303541 481.843704L916.899107 494.563385C912.222016 305.709617 721.984814 156.359281 490.684916 156.359281ZM874.458588 502.750536 878.87761 508.341678C903.736413 539.794134 916.986598 575.834235 916.986598 613.308352 916.986598 674.834711 880.94872 732.326397 819.523603 770.474036 802.737889 780.898687 803.163281 797.33264 810.846353 813.646472 812.511881 817.182966 814.544511 820.713465 816.871626 824.262883 820.163834 829.284301 823.400763 833.439809 825.757675 836.181018L824.345705 834.346205C826.245123 837.112873 827.218499 839.100202 827.393889 839.834262 826.869427 837.639217 827.310775 834.026062 830.096989 830.317167 832.870293 826.625461 836.179448 825.20914 838.39741 825.099927 837.62165 825.138126 835.424001 824.758139 832.221342 823.706931 830.525993 823.122175 827.066992 821.949243 822.554587 820.445634 815.038264 817.941067 807.337514 815.435854 799.875177 813.091531 798.056786 812.520277 796.271017 811.964481 794.521489 811.425549 765.181772 802.387618 755.193882 799.883117 745.847847 802.486444 718.393861 810.133719 689.327665 814.092267 659.544225 814.092267 627.172439 814.092267 595.657587 809.415292 566.15969 800.421253L561.682084 799.056011 557.04528 799.695183C535.285067 802.694774 513.110434 804.215178 490.684916 804.215178 446.549157 804.215178 403.457662 798.324515 362.734113 786.938494 351.832032 783.890348 334.145392 788.544012 288.136195 802.924618 285.63427 803.706617 283.086605 804.508715 280.497094 805.329449 267.729439 809.3761 254.472422 813.705833 241.486537 818.034925 236.942593 819.549735 232.755682 820.956737 229.021658 822.220252 226.774814 822.980535 225.182894 823.522465 224.313674 823.819927 221.208111 824.851035 218.947329 825.258295 218.14354 825.226502 220.466916 825.3184 223.929592 826.769872 226.819244 830.667817 229.71253 834.570666 230.098527 838.322463 229.508371 840.593362 229.704432 839.838924 230.732379 837.824526 232.699225 835.037893 233.109594 834.570863 234.938024 832.180175 237.251504 829.020436 241.083328 823.786956 244.915738 818.239954 248.523314 812.576814 251.420355 808.029067 254.057357 803.582735 256.378759 799.271676 270.621662 772.821292 274.586859 752.486106 253.20607 739.157937 161.261462 681.842314 107.013402 594.975258 107.013402 501.634326 107.013402 335.711853 277.868719 199.053473 490.684916 199.053473 700.625512 199.053473 870.235026 332.209541 874.282045 495.621998L874.458588 502.750536ZM874.35643 501.634326 916.986598 501.634326C916.986598 499.274725 916.957412 496.917663 916.899107 494.563385L874.282045 495.621998C874.331614 497.623493 874.35643 499.627657 874.35643 501.634326ZM557.04528 799.695183 559.951702 820.842898 566.15969 800.421253C467.508194 770.341978 402.101853 695.9473 402.101853 613.308352 402.101853 503.628141 516.430046 412.524437 659.544225 412.524437 750.184557 412.524437 832.352401 449.475927 878.87761 508.341678L912.303541 481.843704C857.398565 412.375501 762.792042 369.830244 659.544225 369.830244 494.751422 369.830244 359.471685 477.629422 359.471685 613.308352 359.471685 716.357726 438.355709 806.082232 553.743714 841.264542L558.221321 842.629784 562.858125 841.990612C564.566072 841.755176 566.271624 841.511382 567.974711 841.259249L561.740762 799.024014C560.177951 799.255379 558.612768 799.479109 557.04528 799.695183Z" fill="#2c2c2c" p-id="10335"></path></svg>
             </div>
                 <!-- 欢迎字段 -->
-            <h1 class="header_1">欢迎来到聊天室</h1>
+            <h1 class="header_1">欢迎来到聊天室,{{userInfo.nickname}}</h1>
             <!-- 头像放置地点 -->
             <div class="touxiang" @click="goProfile" style="cursor:pointer;">
-                <img :src="userAvatar" alt="头像" class="touxiang-img" />
+                <img :src="avatarUrl" alt="头像" class="touxiang-img" />
             </div>
             <!-- 分割线 -->
             <el-divider class="divider"/>
@@ -40,11 +40,11 @@
                 </div>
                 <el-divider/>
 
-                <!-- 功能列表 -->
+                <!-- 功能列表添加好友创建群聊 -->
                 <div class="function-list" v-if="showFunctionList">
                     <div class="function-item" @click="handleAddFriend">
                         <svg t="1748841555485" class="function-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13219" width="24" height="24"><path d="M602.487386 567.199183c-124.092249 0-225.063919-100.955296-225.063919-225.047546S478.395136 117.105115 602.487386 117.105115c124.075877 0 225.047546 100.955296 225.047546 225.047546S726.563262 567.199183 602.487386 567.199183L602.487386 567.199183zM602.487386 160.083975c-100.443643 0-182.085058 81.625042-182.085058 182.068685 0 100.395548 81.640392 182.068685 182.085058 182.068685 100.363825 0 182.068685-81.673138 182.068685-182.068685C784.555048 241.707994 702.851211 160.083975 602.487386 160.083975L602.487386 160.083975zM941.776835 906.921491c-11.879562 0-21.473057-9.625218-21.473057-21.505803 0-84.662215-32.969902-164.368558-92.768847-224.391606-8.378831-8.378831-8.378831-21.98471 0-30.363542 8.458649-8.394181 22.032806-8.394181 30.411637 0.064468C925.899216 698.806593 963.282638 789.289374 963.282638 885.415688 963.282638 897.296273 953.656397 906.921491 941.776835 906.921491L941.776835 906.921491zM600.871585 567.567573c-173.642782 0.064468-316.185242 142.655024-316.185242 317.848115 0 11.879562-9.625218 21.505803-21.505803 21.505803s-21.473057-9.625218-21.473057-21.505803c0-198.905142 161.810293-360.76353 360.779903-360.76353 0.671289 0 1.614777 0.048095 2.286066 0.096191 11.416004 1.055029 20.22667 10.889001 19.682271 22.416546C623.94407 559.301306 612.959901 568.782238 600.871585 567.567573L600.871585 567.567573z" p-id="13220"></path></svg>
-                        <span>添加好友</span>
+                        <span>添加好友或群聊</span>
                     </div>
                     <div class="function-item" @click="handleCreateGroup">
                         <svg t="1748841555485" class="function-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13219" width="24" height="24"><path d="M602.487386 567.199183c-124.092249 0-225.063919-100.955296-225.063919-225.047546S478.395136 117.105115 602.487386 117.105115c124.075877 0 225.047546 100.955296 225.047546 225.047546S726.563262 567.199183 602.487386 567.199183L602.487386 567.199183zM602.487386 160.083975c-100.443643 0-182.085058 81.625042-182.085058 182.068685 0 100.395548 81.640392 182.068685 182.085058 182.068685 100.363825 0 182.068685-81.673138 182.068685-182.068685C784.555048 241.707994 702.851211 160.083975 602.487386 160.083975L602.487386 160.083975zM941.776835 906.921491c-11.879562 0-21.473057-9.625218-21.473057-21.505803 0-84.662215-32.969902-164.368558-92.768847-224.391606-8.378831-8.378831-8.378831-21.98471 0-30.363542 8.458649-8.394181 22.032806-8.394181 30.411637 0.064468C925.899216 698.806593 963.282638 789.289374 963.282638 885.415688 963.282638 897.296273 953.656397 906.921491 941.776835 906.921491L941.776835 906.921491zM600.871585 567.567573c-173.642782 0.064468-316.185242 142.655024-316.185242 317.848115 0 11.879562-9.625218 21.505803-21.505803 21.505803s-21.473057-9.625218-21.473057-21.505803c0-198.905142 161.810293-360.76353 360.779903-360.76353 0.671289 0 1.614777 0.048095 2.286066 0.096191 11.416004 1.055029 20.22667 10.889001 19.682271 22.416546C623.94407 559.301306 612.959901 568.782238 600.871585 567.567573L600.871585 567.567573z" p-id="13220"></path></svg>
@@ -54,16 +54,17 @@
 
                 <!-- 好友列表 -->
                 <div class="friend-list" v-if="showFriendList">
-                    <div class="friend-item" v-for="friend in friends" :key="friend.id">
-                        <img :src="friend.avatar" :alt="friend.name" class="friend-avatar">
+                    <div class="friend-item" v-for="friend in friends" :key="friend.username"
+                        @click="goToOtherProfile(friend.username)">
+                        <img :src="friend.avatarUrl" alt="头像" class="friend-avatar">
                         <div class="friend-info">
-                            <span class="friend-name">{{ friend.name }}</span>
-                            <span class="friend-status">{{ friend.status }}</span>
+                            <span class="friend-name">{{ friend.nickname }}</span>
+                            <span class="friend-status">{{ friend.status == 1 ? '在线' : '离线' }}</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 群聊列表 -->
+                <!-- 群聊列表
                 <div class="group-list" v-if="showGroupList">
                     <div class="group-item" v-for="group in groups" :key="group.id">
                         <img :src="group.avatar" :alt="group.name" class="group-avatar">
@@ -72,38 +73,48 @@
                             <span class="group-members">{{ group.memberCount }}人</span>
                         </div>
                     </div>
+                </div> -->
+
+                <!-- 聊天列表 -->
+                <div class="group-list" v-if="showGroupList">
+                    <div class="group-item" v-for="privateChat in privateChatList" :key="privateChat.username"
+                    @click="goToPrivateChat(privateChat.username)">
+                        <img :src="privateChat.avatarUrl" :alt="privateChat.username" class="group-avatar">
+                        <div class="group-info">
+                            <span class="group-name">{{ privateChat.nickname }}</span>
+                            <span class="group-members">{{ privateChat.content }}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- 聊天内容区 -->
+            <!-- <div class="friend-list" v-if="showGroupList">
+                    <div class="g" v-for="friend in friends" :key="friend.username"
+                        @click="goToOtherProfile(friend.username)">
+                        <img :src="friend.avatarUrl" alt="头像" class="friend-avatar">
+                        <div class="friend-info">
+                            <span class="friend-name">{{ friend.nickname }}</span>
+                            <span class="friend-status">{{ friend.status == 1 ? '在线' : '离线' }}</span>
+                        </div>
+                    </div>
+                </div> -->
+            
+            <!-- 聊天内容区 嵌套路由-->
             <div v-if="showChatPanel" class="chat-panel">
-                <div class="chat-header">聊天室</div>
-                <div class="chat-messages">
-                    <div class="chat-message left">
-                        <div class="avatar"></div>
-                        <div class="bubble">你好，欢迎使用聊天室！</div>
-                    </div>
-                    <div class="chat-message right">
-                        <div class="avatar self"></div>
-                        <div class="bubble">你好！</div>
-                    </div>
-                </div>
-                <div class="chat-input-bar">
-                    <input class="chat-input" type="text" placeholder="请输入消息..." v-model="chatInput" @keyup.enter="sendMessage">
-                    <button class="chat-send" @click="sendMessage">发送</button>
-                </div>
+                <!-- 绑定 :key 到当前路由的 fullPath -->
+                <router-view :key="$route.fullPath"></router-view>
             </div>
         </div>
     </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
+<script setup lang="ts">
+import { getUserInfoApi, getImageApi, getFriendListApi, addFriendApi, getPrivateChatListApi } from '@/request/api'
+import { ref, onMounted} from 'vue'
 import router from '@/router'
-import axios from 'axios'
+import type { GetUserInfoResponse } from '@/dto/UserDto';
+import { useWebSocketStore } from '@/stores/webSocket';
+import type { SystemMessage, WebSocketMessage } from '@/dto/MessageDto';
 
-
-const ID = localStorage.getItem("userId");
 
 // 控制功能列表显示
 const showFunctionList = ref(false)
@@ -111,10 +122,24 @@ const showFriendList = ref(false)
 const showGroupList = ref(false)
 const showChatPanel = ref(true)
 
-// 模拟数据
-const friends = ref([
-   
-])
+interface Friend {
+    nickname: string;
+    username: string;
+    avatar: string;
+    status: number;
+    avatarUrl : string
+}
+const friends = ref<Friend[]>([])
+
+interface PrivateChat{
+    nickname: string;
+    username: string;
+    avatar:string;
+    content: string; // 最近一条消息内容
+    avatarUrl: string; // 好友头像URL
+}
+
+const privateChatList = ref<PrivateChat[]>([])
 
 const groups = ref([
     { id: 1, name: '技术交流群', avatar: 'https://placeholder.com/50', memberCount: 10 },
@@ -127,83 +152,108 @@ const chatMessages = ref([
     { from: 'me', text: '你好！' }
 ])
 
-const userAvatar = ref('../淘公仔.svg')
-const username = localStorage.getItem('username')
+// 用户信息数据
+const userInfo = ref<GetUserInfoResponse>({
+  avatar: 'https://picsum.photos/200/200',
+  username: 'test_user',
+  email: 'test@example.com',
+  nickname: '测试用户',
+  gender: 'male', // male 或 female
+  age: 25,
+  signature: '生活不止眼前的苟且，还有诗和远方',
+  status : 0
+})
 
-const fetchUserAvatar = async () => {
-    if (username) {
-        try {
-            const res = await axios.get(`http://localhost:3000/users?username=${username}`)
-            if (res.data && res.data.length > 0) {
-                userAvatar.value = res.data[0].avatar || '/淘公仔.svg'
-            }
-        } catch (e) {
-            userAvatar.value = '/淘公仔.svg'
-        }
-    }
+const avatarUrl = ref<string>('https://picsum.photos/200/200');
+
+// 模拟获取用户信息
+const fetchUserInfo = async () => {
+  // 这里应该是调用API获取用户信息
+  const response = await getUserInfoApi();
+  if(response.data.code == 200){
+    userInfo.value = response.data.data;
+    //获取头像
+    const avatarResponse = await getImageApi(response.data.data.avatar);
+    avatarUrl.value = URL.createObjectURL(avatarResponse.data);
+  } else{
+    alert(response.data.message);
+  }
 }
 
-const goProfile = () => {
-    router.push('/profile')
-}
 
 const fetchFriends = async () => {
     try {
-        // 1. 先获取好友关系数据
-        console.log(`${ID}`);
-        const friendshipsRes = await axios.get(`http://localhost:3000/friendships?user_id=${ID}`);
-        
-        // 2. 检查是否有好友关系数据
-        if (!friendshipsRes.data || friendshipsRes.data.length === 0) {
-            console.log('没有找到好友关系数据');
-            friends.value = [];
-            return;
-        }
-        
-        // 3. 安全地获取friend_id
-        const friendship = friendshipsRes.data[0];
-        if (!friendship.hasOwnProperty('friend_id')) {
-            console.error('好友关系数据中缺少friend_id字段');
-            friends.value = [];
-            return;
-        }
-        
-        const friendId = friendship.friend_id;
-        console.log('获取到的好友ID:', friendId);
-        
-        // 4. 使用获取到的friendId获取好友信息
-        const userRes = await axios.get(`http://localhost:3000/users/${friendId}`);
-        
-        // 5. 检查用户数据是否存在
-        if (userRes.data && userRes.data.length > 0) {
-            // 将用户数据转换为适合前端展示的格式
-            friends.value = [{
-                id: userRes.data[0].id,
-                name: userRes.data[0].username,
-                avatar: userRes.data[0].avatar || 'https://picsum.photos/50/50',
-                status: '在线' // 这里可以根据实际情况设置状态
-            }];
+        // 1. 获取当前用户的好友关系
+        const response = await getFriendListApi() // 假设有一个API可以获取好友列表
+        if(response.data.code === 200) {
+            friends.value = response.data.data.map((friend: any) => ({
+                nickname: friend.nickname,
+                username: friend.username,
+                avatar: friend.avatar,
+                status: friend.status, // 假设所有好友都是在线状态
+                avatarUrl: ''
+            }));
+            for(let i = 0; i < friends.value.length; i++) {
+                // 获取每个好友的头像
+                const avatarResponse = await getImageApi(friends.value[i].avatar);
+                friends.value[i].avatarUrl = URL.createObjectURL(avatarResponse.data);
+            }
+            console.log('好友列表获取成功:', friends.value);
         } else {
-            console.error('根据friend_id未找到对应的用户数据');
-            friends.value = [];
+            console.error('获取好友列表失败:', response.data.message);
         }
     } catch (error) {
         console.error('获取好友列表过程中发生错误:', error);
         // 提供默认数据以便测试
-        friends.value = [
-            { id: 1, name: '张三', avatar: 'https://picsum.photos/50/50?1', status: '在线' },
-            { id: 2, name: '李四', avatar: 'https://picsum.photos/50/50?2', status: '离线' }
-        ];
     }
 };
+
+//挂载前事件
 onMounted(async () => {
     try {
-        await fetchUserAvatar();
+        await connectws();
+        await fetchUserInfo();
         await fetchFriends();
+        await fetchPrivateChatList();
     } catch (error) {
         console.error('组件初始化失败:', error);
     }
 });
+
+const ws = useWebSocketStore();
+const connectws = async () => {
+    try {
+        // 连接WebSocket
+        ws.connect();
+        console.log('WebSocket连接成功');
+    } catch (error) {
+        console.error('WebSocket连接失败:', error);
+    }
+}
+//处理连接后信息接受 -- 只处理SYSTEM消息
+if (ws.socket) {
+    ws.socket.onmessage = (event: MessageEvent) => {
+        // const data = event.data;
+        const message = <WebSocketMessage<Object>>JSON.parse(event.data);
+        // 根据消息类型处理不同的事件
+        switch (message.type) {                 
+            case 'SYSTEM':
+                //系统消息
+                const data = message.data as SystemMessage;
+                switch(data.type){
+                    case 'CONNECTION_STATUS_UPDATE':
+                        // 处理连接状态更新
+                        console.log('连接状态更新:', data.message);
+                        break;
+                    case 'FRIEND_STATUS_UPDATE':
+                        fetchFriends();
+                        break;
+                }
+            break;
+        }
+    };
+}
+
 
 // 处理点击好友按钮
 const handleFriendClick = () => {
@@ -212,38 +262,39 @@ const handleFriendClick = () => {
     showGroupList.value = false
 }
 
+//处理好友路由跳转
+const goToOtherProfile = (username: string) => {
+    // 跳转到好友个人信息页面
+    router.push({ name:'OtherProfile',params: { username } });
+}
 // 处理添加好友
-const handleAddFriend = () => {
-    const friendUsername = prompt('请输入好友用户名：');
-    if (friendUsername) {
-        axios.get(`http://localhost:3000/users?username=${friendUsername}`)
-            .then(res => {
-                if (res.data && res.data.length > 0) {
-                    const newFriend = {
-                        id: res.data[0].id,
-                        name: res.data[0].username,
-                        avatar: res.data[0].avatar || 'https://picsum.photos/50/50',
-                        status: '在线'
-                    };
-                    
-                    // 检查是否已添加该好友
-                    const isFriendExist = friends.value.some(friend => friend.id === newFriend.id);
-                    if (isFriendExist) {
-                        alert('该用户已在好友列表中！');
-                    } else {
-                        friends.value.push(newFriend);
-                        alert('添加好友成功！');
-                    }
-                } else {
-                    alert('该用户不存在！');
-                }
-            })
-            .catch(error => {
-                console.error('添加好友错误:', error);
-                alert('添加好友失败，请稍后再试！');
-            });
+const handleAddFriend = async () => {
+    const name = prompt('请输入好友的用户名')
+    let response
+    if(name == null || name.trim() === '') {
+        alert('用户名不能为空')
+        return
+    }else{
+        //验证是否是群聊id
+        if(name.length>5){
+            const isGroup = name.substring(0, 5) === 'group'? true : false
+            if(isGroup) {
+                //添加群聊
+                return ;
+            }
+        }
+        //不是群聊id
+        //添加好友
+        response = await addFriendApi(name)
+        if(response.data.code === 200) {
+            alert('添加好友成功')
+            // 刷新好友列表
+            await fetchFriends()
+        } else {
+            alert(response.data.message)
+        }
     }
-};
+}
 
 // 处理创建群聊
 const handleCreateGroup = () => {
@@ -252,17 +303,47 @@ const handleCreateGroup = () => {
 }
 
 const handleChatClick = () => {
-    showChatPanel.value = true
     showFunctionList.value = false
     showFriendList.value = false
-    showGroupList.value = false
+    showGroupList.value = true
+    showChatPanel.value = true
+    // location.reload(); // 刷新页面以确保聊天界面正确加载
+    fetchPrivateChatList(); // 刷新私聊列表
 }
 
-function sendMessage() {
-    if (chatInput.value.trim()) {
-        chatMessages.value.push({ from: 'me', text: chatInput.value })
-        chatInput.value = ''
+const goProfile = () => {
+    router.push('/profile')
+}
+
+
+const fetchPrivateChatList = async () => {
+    const response = await getPrivateChatListApi();
+    if(response.data.code === 200) {
+            privateChatList.value = response.data.data.map((PrivateChat: any) => ({
+                nickname: PrivateChat.nickname,
+                username: PrivateChat.username,
+                avatar: PrivateChat.avatar,
+                content: PrivateChat.content, // 最近一条消息内容
+                avatarUrl: ''
+            }));
+            for(let i = 0; i < privateChatList.value.length; i++) {
+                // 获取每个私聊的头像
+                const avatarResponse = await getImageApi(privateChatList.value[i].avatar);
+                privateChatList.value[i].avatarUrl = URL.createObjectURL(avatarResponse.data);
+            }
+            // console.log('私聊列表获取成功:', friends.value);
+        } else {
+        console.error('获取私聊列表失败:', response.data.message);
     }
+}
+
+const goToPrivateChat = (user:string) => {
+    // 跳转到私聊页面
+    console.log('发起私聊:',user);
+  router.push({
+    name: 'PrivateChat',
+    params: { username: user }
+  });
 }
 </script>
 
